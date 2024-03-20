@@ -1,0 +1,142 @@
+body{
+    --color-primary: rgb(9, 147, 234);
+    --color-primary-dark: rgb(105, 105, 216);
+    --color-secondary: blue;
+    --color-error: red;
+    --color-success: rgb(24, 211, 24);
+    --border-radius: 4px;
+
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20 px;
+    background: url(/code/public/images/login-background.jpg);
+    background-size: cover;
+}
+
+.container{
+    width: 400 px;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: white;
+}
+
+.container,
+.form__input, 
+.form__button {
+    font: 500 1rem 'Ebrima', sans-serif;
+}
+
+.form--hidden{
+    display:none
+}
+
+.form__title{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form__message {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form__message--success {
+    color: var(--color-success);
+}
+
+.form__message--error {
+    color: var(--color-error);
+}
+
+.form__input-group{
+    margin-bottom: 1rem;
+}
+
+.form__input{
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 1px solid white;
+    outline: none;
+    background: lightgray;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.form__input:focus {
+    border-color: var(--color-primary);
+    background: white;
+}
+
+.form__input--error{
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+.form__input-error-message{
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-error)
+}
+
+.form__button{
+  display: inline-block;
+  border-radius: var(--border-radius);
+  background-color: var(--color-primary);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.form__button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+.form__button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .form__button:hover span {
+    padding-right: 25px;
+  }
+  
+  .form__button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .form__text{
+    text-align: center;
+  }
+
+  .form__link{
+    color: var(--color-secondary);
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .form__link:hover{
+    text-decoration: underline;
+  }
