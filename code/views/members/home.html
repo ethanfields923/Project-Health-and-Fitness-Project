@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home-HFC</title>
+<link rel="shortcut icon" href="/code/public/images/shortcut-icon.jpg">
+<link rel="stylesheet" href="/code/public/styles/memberstyles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ <!--Used for popup overlay side navigation bar and title bar-->
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="./home.html">Home</a>
+  <a href="./schedule.html">Schedule</a>
+  <a href="./dashboard.html">Dashboard</a>
+  <a href="./profile.html">Profile</a>
+  <a href="./pricing.html">Pricing Plans</a>
+  <!--<a id="log_out_button" href="#Logout">Log Out</a>-->
+  <a id="log_out_button" onclick="logOut()">Log Out</a>
+</div>
+<div class="title__header">
+  <div id="main" class="menu__main">
+    <span onclick="openNav()">&#9776; Menu</span>
+    <a href="#default" class="logo">Health&FitnessClub</a>
+</div>
+</div>
+
+    <!--Used for the hero image on home page-->
+    <div class="hero__image__home">
+      <div class="hero__text__home">
+        <h1>Welcome to HAFC!</h1>
+        <p>Are you ready to become a better you?</p>
+        <button id="home_pricingButton" onclick="redirectPricing()"><span>Check out our Membership plans!</span></button><br>
+        <button id="home_profileButton" onclick="redirectProfile()"><span>Update Profile</span></button>
+      </div>
+    </div>
+    <br>
+    <div class="home__about__container">
+      <h1 class="home__title" id="title">About</h1>
+      <p style="font-style: italic;">Here at HAFC, our goal is help you meet your fitness goals.
+      With our 20+ years experience and plethora of personal trainers, we strive to make you an even BETTER you. 
+      </p>
+      <p style="font-style: italic">
+      Our facilities offer 24/7 services, with on-site personal ready to provide
+      any help you may need. 
+      </p>
+      <p style="font-style: italic">
+        We are looking forward to having you join the club; join the Health and Fitness Club! 
+      </p>
+    </div>
+    <br>
+    <h1 class="home__title" id="title">Meet the Team</h1>
+    <div class="home__row">
+      <div class="home__column">
+        <div class="home__card">
+          <img src="/code/public/images/Janeth-Doe-PFP.jpg" alt="Jane" style="width:100%">
+          <div class="home__team__container">
+            <h2>Janeth Doe</h2>
+            <p class="home__team__title">CEO &amp; Founder</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="home__column">
+        <div class="home__card">
+          <img src="/code/public/images/Mikkel-Rossland-PFP.jpg" alt="Mike" style="width:100%">
+          <div class="home__team__container">
+            <h2>Mikkel Rossland</h2>
+            <p class="home__team__title">Personal Training Manager</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="home__column">
+        <div class="home__card">
+          <img src="/code/public/images/Becky-Hubert-PFP.jpg" alt="Becky" style="width:100%">
+          <div class="home__team__container">
+            <h2>Becky Hubert</h2>
+            <p class="home__team__title">Group Fitness Manager</p>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <script type="text/javascript" src="/code/public/js_scripts/members/member.js"></script>
+    <script type="text/javascript" src="/code/public/js_scripts/members/scripts.js"></script>   
+</body>
+</html>

@@ -1,0 +1,220 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile-HFC</title>
+<link rel="shortcut icon" href="/code/public/images/shortcut-icon.jpg">
+<link rel="stylesheet" href="/code/public/styles/memberstyles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+   <!--Used for popup overlay side navigation bar and title bar-->
+   <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="./home.html">Home</a>
+    <a href="./schedule.html">Schedule</a>
+    <a href="./dashboard.html">Dashboard</a>
+    <a href="./profile.html">Profile</a>
+    <a href="./pricing.html">Pricing Plans</a>
+    <!--<a id="log_out_button" href="#Logout">Log Out</a>-->
+  <a id="log_out_button" onclick="logOut()">Log Out</a>
+  </div>
+  <div class="title__header">
+    <div id="main" class="menu__main">
+      <span onclick="openNav()">&#9776; Menu</span>
+      <a href="#default" class="logo">Health&FitnessClub</a>
+    </div>
+  </div>
+
+      <!--Used for creating the container to store information on the user's profile; this is pulled from a code template with a few modifications to suit the project-->
+      <div class="container light-style flex-grow-1 container-p-y">
+        <h4 class="profile__title">
+            My Fitness Profile
+        </h4>
+        <div class="card overflow-hidden">
+            <div class="row no-gutters row-bordered row-border-light">
+                <div class="col-md-3 pt-0">
+
+                    <!--Side navigation bar on profile page-->
+                    <div class="list-group list-group-flush account-settings-links">
+                        <a class="list-group-item list-group-item-action active" data-toggle="list"
+                            href="#account-General">General</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#account-Metrics">Health Stats</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#account-Goals"> Fitness Goals</a>    
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#account-Change-password">Change Password</a>
+                    </div>
+                </div>
+
+                <!--For the general section of profile page-->
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="account-General">
+                            <div class="card-body media align-items-center">
+                                <img src="/code/public/images/shortcut-icon.jpg" alt
+                                    class="profile__view-img" width="100" height="100">
+                                <div class="media-body ml-4">
+                                    <div class="general__username" id="userName">Admin</div>
+                                    <div class="general__joinDate" id="joinDate">Joined on: 2023-02-01</div>
+                                    <div class="general__favExercise" id="favExercise">My favourite exercise is: Chest Dips</div>
+                                </div>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="form-label">Username</label>
+                                    <input type="text" class="form-control mb-1" placeholder="Enter username">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter first and last name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">E-mail</label>
+                                    <input type="text" class="form-control mb-1" placeholder="Enter appropiate email address">
+                                </div>
+                                <label class="form-label">Membership Type</label>
+                                    <input type="text" class="form-control" placeholder="Membership type" readonly>
+                                <div class="form-group">
+                                    <label for="bioArea" class="form-label">Bio</label>
+                                    <textarea class="form-control" name="bioArea" id="bioArea" rows="5" 
+                                    maxlength="450" placeholder="Tell us about yourself and your goals"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--For the change password section of the profile page-->
+                        <div class="tab-pane fade" id="account-Change-password">
+                            <div class="card-body pb-2">
+                                <div class="form-group">
+                                    <label class="form-label">Current password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">New password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Repeat new password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--For the health metrics section for th profile page-->
+                        <div class="tab-pane fade" id="account-Metrics">
+                            <div class="card-body pb-2">
+                                <div class="form-group">
+                                    <label class="form-label">Age</label>
+                                    <input type="number" id="profile_age" name="age" min="15" max="100">
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Gender</label><br>
+                                    <input type="radio" id="profile_male" name="gender" value="Male">
+                                    <label for="profile_male">Male</label><br>
+                                    <input type="radio" id="profile_female" name="gender" value="Female">
+                                    <label for="profile_male">Female</label><br>
+                                    <input type="radio" id="profile_gendernot" name="gender" value="Prefer not to say">
+                                    <label for="profile_gendernot">Prefer not to say</label><br>
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Weight</label>
+                                    <input type="number" id="profile_weight" name="weight" min="1" max="1000" step=".1">
+                                    <label class="form-label">lbs</label>
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Height</label>
+                                    <input type="number" id="profile_height_ft" name="height_ft" min="0" max="10">
+                                    <label class="form-label">ft</label>
+                                    <input type="number" id="profile_height_in" name="height_in" min="0" max="11">
+                                    <label class="form-label">in</label>
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">BMI</label>
+                                    <input type="text" class="form-control" placeholder="0.0" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Activity Level</label>
+                                    <select class="custom-select">
+                                        <option selected>Not very Active: Little or no exercise</option>
+                                        <option>Lightly Active: Exercise 1-3 times/week</option>
+                                        <option>Moderate: Exercise 4-5 times/week</option>
+                                        <option>Active: Daily exercise or intense exercise 3-4 times/week</option>
+                                        <option>Very Active: Intense exercise 6-7 times/week</option>
+                                        <option>Extremely Active: Very intense exercise daily, or physical job</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--For the fitness goals section for the profile page-->
+                        <div class="tab-pane fade" id="account-Goals">
+                            <div class="card-body pb-2">
+                                <div class="form-group">
+                                    <label class="form-label">What is your overall goal?</label>
+                                    <select class="custom-select">
+                                        <option selected>I want to gain more muscles</option>
+                                        <option>I want to gain more strength</option>
+                                        <option>I want to gain more endurance</option>
+                                        <option>All of the above</option>
+                                    </select>
+                                </div>    
+                                <div class="form-group">
+                                    <label class="form-label">Weight Goal</label>
+                                    <input type="number" id="profile_curr_weight" name="curr_weight" min="1" max="1000" step=".1">
+                                    <label class="form-label">lbs</label>
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Weekly Exercise Goal</label>
+                                    <select class="custom-select">
+                                        <option selected>1 day per week</option>
+                                        <option>2 days per week</option>
+                                        <option>3 days per week</option>
+                                        <option>4 days per week</option>
+                                        <option>5 days per week</option>
+                                        <option>6 days per week</option>
+                                        <option>7 days per week</option>
+                                    </select>
+                                </div>
+                                <hr class="border-light m-0">
+                                <div class="card-body pb-2">
+                                    <h6 class="mb-4">Optional</h6>   
+                                <div class="form-group">
+                                    <label class="form-label">Favourite Exercise</label>
+                                    <input type="text" class="form-control mb-1" placeholder="Tell us what's your favourite exercise to do">
+                                </div>
+                                <div class="form-group">
+                                    <label for="personalGoal" class="form-label">Bio</label>
+                                    <textarea class="form-control" name="personalGoal" id="personalGoal" rows="5" 
+                                    maxlength="450" placeholder="Are there any additional goals you wish to share? Tell us and let's help you meet them!"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="text-right mt-3">
+            <button type="button" id="profile_save_button" class="btn btn-primary">Save changes</button>&nbsp;
+            <button type="button" id="profile_cancel_button" class="btn btn-default">Cancel</button>
+        </div>
+    </div>
+</body>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/code/public/js_scripts/members/member.js"></script>
+    <script type="text/javascript" src="/code/public/js_scripts/members/scripts.js"></script>
+</html>

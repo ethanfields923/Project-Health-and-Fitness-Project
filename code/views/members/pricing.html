@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Memberships-HFC</title>
+<link rel="shortcut icon" href="/code/public/images/shortcut-icon.jpg">
+<link rel="stylesheet" href="/code/public/styles/memberstyles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+</head>
+
+<body>
+   <!--Used for popup overlay side navigation bar and title bar-->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="./home.html">Home</a>
+    <a href="./schedule.html">Schedule</a>
+    <a href="./dashboard.html">Dashboard</a>
+    <a href="./profile.html">Profile</a>
+    <a href="./pricing.html">Pricing Plans</a>
+    <!--<a id="log_out_button" href="#Logout">Log Out</a>-->
+  <a id="log_out_button" onclick="logOut()">Log Out</a>
+  </div>
+  <div class="title__header">
+    <div id="main" class="menu__main">
+      <span onclick="openNav()">&#9776; Menu</span>
+      <a href="#default" class="logo">Health&FitnessClub</a>
+  </div>
+  </div>
+  
+  <h1 class="home__title">Choose your Membership Plan</h1>
+  <div class="hero__image__pricing">
+
+    <!--Used to show the different membership plans-->
+    <div class="price__columns">
+        <ul class="price">
+          <li class="header">Basic</li>
+          <li class="grey">$ 100 one-time-payment!!</li>
+          <li class="grey"><a class="join__memberbutton" id="Basic" onclick="confirm_paymentPlan(this)"><span>Join Now</span></a></li>
+          <li>No Commitment Period</li>
+            <li>Access to ALL locations</li>
+            <li>FREE Wifi**</li>
+            <li>Swimming Pools**</li>
+            <li>Sauna**</li>
+            <li>Towel Service**</li>
+            <li class="unavailable">FREE unlimited massage chair use*</li>
+            <li class="unavailable">Access to group-fitness classes***</li>
+            <li class="unavailable">Exclusive Gym Rat Workout Area**</li>
+        </ul>
+        <ul class="price">
+            <li class="header" style="background-color:#b42e2e">Deluxe</li>
+            <li class="grey">$ 200 one-time-payment!!</li>
+            <li class="grey"><a class="join__memberbutton" id="Deluxe" onclick="confirm_paymentPlan(this)"><span>Join Now</span></a></li>
+            <li>No Commitment Period</li>
+            <li>Access to ALL locations</li>
+            <li>FREE Wifi**</li>
+            <li>Swimming Pools**</li>
+            <li>Sauna**</li>
+            <li>Towel Service**</li>
+            <li class=>FREE unlimited massage chair use*</li>
+            <li class=>Access to group-fitness classes***</li>
+            <li class="unavailable">Exclusive Gym Rat Workout Area**</li>
+          </ul>
+        <ul class="price">
+            <li class="header">Gym Rat</li>
+            <li class="grey">$ 300 one-time-payment!!</li>
+            <li class="grey"><a class="join__memberbutton" id="Gym Rat" onclick="confirm_paymentPlan(this)"><span>Join Now</span></a></li>
+            <li>No Commitment Period</li>
+            <li>Access to ALL locations</li>
+            <li>FREE Wifi**</li>
+            <li>Swimming Pools**</li>
+            <li>Sauna**</li>
+            <li>Towel Service**</li>
+            <li>FREE unlimited massage chair use*</li>
+            <li>Access to group-fitness classes***</li>
+            <li>Exclusive Gym Rat Workout Area**</li>
+          </ul>
+    </div>
+
+    <!--Disclaimers for the membership plans-->
+    <div class="hero__text__pricing">
+        <p>*At participating locations, where available, and during staffed hours.</p>
+        <p>**Where available</p>
+        <p>***All group fitness classes are FREE, as long as you have access to them</p>
+    </div>
+  </div>
+</body>
+    <script type="text/javascript" src="/code/public/js_scripts/members/member.js"></script>
+    <script type="text/javascript" src="/code/public/js_scripts/members/scripts.js"></script>
+</html>

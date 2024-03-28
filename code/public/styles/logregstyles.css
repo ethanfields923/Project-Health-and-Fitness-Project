@@ -1,7 +1,7 @@
 body{
     --color-primary: rgb(9, 147, 234);
-    --color-primary-dark: rgb(105, 105, 216);
-    --color-secondary: blue;
+    --color-primary-dark: rgb(65, 65, 189);
+    --color-secondary: rgb(202, 92, 77);
     --color-error: red;
     --color-success: rgb(24, 211, 24);
     --border-radius: 4px;
@@ -135,6 +135,7 @@ body{
     text-decoration: none;
     cursor: pointer;
     text-align: center;
+    display: block;
   }
 
   .form__link:hover{

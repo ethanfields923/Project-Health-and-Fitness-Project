@@ -8,7 +8,22 @@
 </head>   
     <body>
         <div class="container">
-        <form class="form" id="login">
+
+        <!--Form asking for user type-->    
+        <form class="form" id="userType">
+            <h1 class="form__title">What type of user are you?</h1>
+            <div class="form__message form__message--error"></div>
+            <input type="radio" id="member" name="user_type" value="member">
+            <label for="member">Member/New Member</label><br>
+            <input type="radio" id="trainer" name="user_type" value="trainer">
+            <label for="trainer">Trainer</label><br>
+            <input type="radio" id="admin" name="user_type" value="admin">
+            <label for="admin">Administrative Staff</label>
+            <button class="form__button" type="submit" id="type_button"><span>Enter</span></button>
+        </form>       
+        
+        <!--Form for logging user in; is hidden on default-->
+        <form class="form form--hidden" id="login">
             <h1 class="form__title">User Login</h1>
             <div class="form__message form__message--error"></div>
             <div class="form__input-group">
@@ -23,8 +38,12 @@
             <p class="form__text">
             <a class="form__link" href='./' id="linkcreateNewAccount">Not a member yet? Sign Up Today!</a>
             </p>
+            <p class="form__text">
+                <a class="form__link" href='./' id="linkUserType">Selected the wrong user type? Go back to the last page!</a>
+            </p>
         </form>
 
+        <!--Form for creating a new member account; is hidden by default and is only available for member user types-->
         <form class="form form--hidden" id="createAccount">
             <h1 class="form__title">Become a Member Today!</h1>
             <div class="form__message form__message--error"></div>
@@ -49,8 +68,11 @@
             <a class="form__link" href='./' id="linkLogin">Already a member? Sign In</a>
             </p>
         </form>
+
         </div>
-     <script type="text/javascript" src="/code/public/js/member.js"></script>   
-     <script type="text/javascript" src="/code/public/js/scripts/logregscripts.js"></script>
+     <script type="text/javascript" src="/code/public/js_scripts/admin/admin.js"></script>   
+     <script type="text/javascript" src="/code/public/js_scripts/trainers/trainer.js"></script>   
+     <script type="text/javascript" src="/code/public/js_scripts/members/member.js"></script>   
+     <script type="text/javascript" src="/code/public/js_scripts/logregscripts.js"></script>
     </body>
 </html>
