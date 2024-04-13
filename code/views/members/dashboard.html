@@ -3,35 +3,181 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard-HFC</title>
-<link rel="shortcut icon" href="/code/public/images/shortcut-icon.jpg">
-<link rel="stylesheet" href="/code/public/styles/memberstyles.css">
+<link rel="shortcut icon" href="/images/shortcut-icon.jpg">
+<link rel="stylesheet" href="/styles/memberstyles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
 </head>
-
 <body>
   <!--Used for popup overlay side navigation bar and title bar-->
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="./home.html">Home</a>
-    <a href="./schedule.html">Schedule</a>
-    <a href="./dashboard.html">Dashboard</a>
-    <a href="./profile.html">Profile</a>
-    <a href="./pricing.html">Pricing Plans</a>
-    <!--<a id="log_out_button" href="#Logout">Log Out</a>-->
-  <a id="log_out_button" onclick="logOut()">Log Out</a>
+    <a href="#Home" onclick="redirectHome()">
+      <span class="material-icons-outlined">home</span>
+      Home
+    </a>
+    <a href="#Schedule" onclick="redirectSchedule()">
+      <span class="material-icons-outlined">event</span>
+      Schedule
+    </a>
+    <a href="#Dashboard" onclick="redirectDashboard()">
+      <span class="material-icons-outlined">analytics</span>
+      Dashboard
+    </a>
+    <a href="#Profile" onclick="redirectProfile()">
+      <span class="material-icons-outlined">account_circle</span>
+      Profile
+    </a>
+    <a href="#Pricing" onclick="redirectPricing()">
+      <span class="material-icons-outlined">payments</span>
+      Pricing Plans
+    </a>
+  <a href="#Logout" onclick="logOut()">
+    <span class="material-icons-outlined">logout</span>
+    Log Out
+  </a>
   </div>
   <div class="title__header">
     <div id="main" class="menu__main">
       <span onclick="openNav()">&#9776; Menu</span>
-      <a href="#default" class="logo">Health&FitnessClub</a>
+      <a href="#default" class="logo">
+        <span class="material-icons-outlined">fitness_center</span>
+        Health&FitnessClub
+      </a>
   </div>
   </div>
 
-    <p>Pricing</p>
+  <!--Shows an basic overview of the user's current weight, their weekly exercise goal, their streak, number of schedule meetings-->
+  <div class="dash__main-container">
+    <div class="dash__main-title">
+      <p class="font-weight-bold">DASHBOARD</p>
+    </div>
 
+    <div class="dash__main-cards">
+      <div class="dash__card__top">
+        <div class="dash__card__top-inner">
+          <span class="material-icons-outlined text-blue">monitor_weight</span>
+          <p class="dash__main__text-primary">CURRENT WEIGHT</p>
+        </div>
+        <span class="dash__main__text-primary font-weight-bold">
+          <span id="currentWeight"></span><br>
+          <span id="goalDistance"></span>
+      </div>
+
+      <div class="dash__card__top">
+        <div class="dash__card__top-inner">
+          <span class="material-icons-outlined text-green">fitbit</span>
+          <p class="dash__main__text-primary">WEEKLY EXERCISE GOAL</p>
+        </div>
+        <span class="dash__main__text-primary font-weight-bold">
+          <span id="weekGoal"></span>
+      </span>
+      </div>
+
+      <div class="dash__card__top">
+        <div class="dash__card__top-inner">
+          <span class="material-icons-outlined text-orange">emoji_events</span>
+          <p class="dash__main__text-primary">Trophies Earned</p>
+        </div>
+        <span class="dash__main__text-primary font-weight-bold">
+          <span id="earnTrophy"></span>
+        </span>
+      </div>
+
+      <div class="dash__card__top">
+        <div class="dash__card__top-inner">
+          <span class="material-icons-outlined text-red">whatshot</span>
+          <p class="dash__main__text-primary">Hot Streak</p>
+        </div>
+        <span class="dash__main__text-primary font-weight-bold">
+          <span id="currentStreak"></span><br>
+          <span id="streakText"></span>
+        </span>
+      </div>
+    </div>
+    <div class="dash__main-title">
+
+      <!--Current Exercise Routine-->
+      <p class="font-weight-bold">SELECTED EXERCISE ROUTINE: <span id="currentPlan"></span></p>
+    </div>
+    <div class="dash__routine-cards">
+      <div class="dash__card__routine bl hidden" id="currentRoutineCard1">
+        <span class="dash__routine__text-primary font-weight-bold">BIG LIFTS</span>
+        <button type="button" name="exerciseDisplay" value="1">Show Exercises</button>
+      </div>
+        
+      <!--Fat Loss-->
+      <div class="dash__card__routine fl hidden" id="currentRoutineCard2">
+        <span class="dash__routine__text-primary font-weight-bold">FAT LOSS</span>
+        <button type="button" name="exerciseDisplay" value="2">Show Exercises</button>
+      </div>
+
+      <!--Muscle Builder-->
+      <div class="dash__card__routine mb hidden" id="currentRoutineCard3">
+        <span class="dash__routine__text-primary font-weight-bold">MUSCLE BUILDER</span>
+        <button type="button" name="exerciseDisplay" value="3">Show Exercises</button>
+      </div>
+        
+      <!--Cardio Bunny-->
+      <div class="dash__card__routine cb hidden" id="currentRoutineCard4">
+        <span class="dash__routine__text-primary font-weight-bold">CARDIO BUNNY</span>
+        <button type="button" name="exerciseDisplay" value="4">Show Exercises</button>
+      </div>
+        
+    </div>
+
+    <!--Shows the current routine exercises-->
+    <div class="dash__exercise-cards hidden" data-value="false" id="currentRoutineExercise1"></div>
+    <div class="dash__exercise-cards hidden" data-value="false" id="currentRoutineExercise2"></div>
+    <div class="dash__exercise-cards hidden" data-value="false" id="currentRoutineExercise3"></div>
+    <div class="dash__exercise-cards hidden" data-value="false" id="currentRoutineExercise4"></div>
+
+    <div class="dash__main-title">
+
+      <!--Exercise Routines to Try-->
+      <p class="font-weight-bold">OTHER EXERCISE ROUTINES TO TRY</p>
+    </div>
+      <div class="dash__routine-cards">
+        <!--Big Lifts-->
+        <div class="dash__card__routine bl" id="routineCard1">
+          <span class="dash__routine__text-primary font-weight-bold">BIG LIFTS</span>
+          <button type="button" name="routineChange" value="1">Change to Current</button>
+          <button type="button" name="exerciseDisplay" value="5">Show Exercises</button>
+        </div>   
+
+        <!--Fat Loss-->
+        <div class="dash__card__routine fl" id="routineCard2">
+          <span class="dash__routine__text-primary font-weight-bold">FAT LOSS</span>
+          <button type="button" name="routineChange" value="2">Change to Current</button>
+          <button type="button" name="exerciseDisplay" value="6">Show Exercises</button>
+        </div>
+
+        <!--Muscle Builder-->
+        <div class="dash__card__routine mb" id="routineCard3">
+          <span class="dash__routine__text-primary font-weight-bold">MUSCLE BUILDER</span>
+          <button type="button" name="routineChange" value="3">Change to Current</button>
+          <button type="button" name="exerciseDisplay" value="7">Show Exercises</button>
+        </div>
+
+        <!--Cardio Bunny-->
+        <div class="dash__card__routine cb" id="routineCard4">
+          <span class="dash__routine__text-primary font-weight-bold">CARDIO BUNNY</span>
+          <button type="button" name="routineChange" value="4">Change to Current</button>
+          <button type="button" name="exerciseDisplay" value="8">Show Exercises</button>
+        </div>
+      </div>
+
+      <!--Shows the other routine exercises-->
+      <div class="dash__exercise-cards hidden" data-value="false" id="routineExercise1"></div>
+      <div class="dash__exercise-cards hidden" data-value="false" id="routineExercise2"></div>
+      <div class="dash__exercise-cards hidden" data-value="false" id="routineExercise3"></div>
+      <div class="dash__exercise-cards hidden" data-value="false" id="routineExercise4"></div>
+  </div> 
 </body>
-    <script type="text/javascript" src="/code/public/js_scripts/members/member.js"></script>
-    <script type="text/javascript" src="/code/public/js_scripts/members/scripts.js"></script>
+    <script type="text/javascript" src="/js/members/dashboard.js"></script>
+    <script type="text/javascript" src="/js/navscripts.js"></script>
 </html>

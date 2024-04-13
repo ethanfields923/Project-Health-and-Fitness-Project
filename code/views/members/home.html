@@ -3,10 +3,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home-HFC</title>
-<link rel="shortcut icon" href="/code/public/images/shortcut-icon.jpg">
-<link rel="stylesheet" href="/code/public/styles/memberstyles.css">
+<link rel="shortcut icon" href="/images/shortcut-icon.jpg">
+<link rel="shortcut icon" href="/images/shortcut-icon.jpg">
+<link rel="stylesheet" href="/styles/memberstyles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
 </head>
 
@@ -14,18 +18,38 @@
  <!--Used for popup overlay side navigation bar and title bar-->
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="./home.html">Home</a>
-  <a href="./schedule.html">Schedule</a>
-  <a href="./dashboard.html">Dashboard</a>
-  <a href="./profile.html">Profile</a>
-  <a href="./pricing.html">Pricing Plans</a>
-  <!--<a id="log_out_button" href="#Logout">Log Out</a>-->
-  <a id="log_out_button" onclick="logOut()">Log Out</a>
+  <a href="#Home" onclick="redirectHome()">
+    <span class="material-icons-outlined">home</span>
+    Home
+  </a>
+  <a href="#Schedule" onclick="redirectSchedule()">
+    <span class="material-icons-outlined">event</span>
+    Schedule
+  </a>
+  <a href="#Dashboard" onclick="redirectDashboard()">
+    <span class="material-icons-outlined">analytics</span>
+    Dashboard
+  </a>
+  <a href="#Profile" onclick="redirectProfile()">
+    <span class="material-icons-outlined">account_circle</span>
+    Profile
+  </a>
+  <a href="#Pricing" onclick="redirectPricing()">
+    <span class="material-icons-outlined">payments</span>
+    Pricing Plans
+  </a>
+<a href="#Logout" onclick="logOut()">
+  <span class="material-icons-outlined">logout</span>
+  Log Out
+</a>
 </div>
 <div class="title__header">
   <div id="main" class="menu__main">
     <span onclick="openNav()">&#9776; Menu</span>
-    <a href="#default" class="logo">Health&FitnessClub</a>
+    <a href="#default" class="logo">
+      <span class="material-icons-outlined">fitness_center</span>
+      Health&FitnessClub
+    </a>
 </div>
 </div>
 
@@ -34,8 +58,6 @@
       <div class="hero__text__home">
         <h1>Welcome to HAFC!</h1>
         <p>Are you ready to become a better you?</p>
-        <button id="home_pricingButton" onclick="redirectPricing()"><span>Check out our Membership plans!</span></button><br>
-        <button id="home_profileButton" onclick="redirectProfile()"><span>Update Profile</span></button>
       </div>
     </div>
     <br>
@@ -57,7 +79,7 @@
     <div class="home__row">
       <div class="home__column">
         <div class="home__card">
-          <img src="/code/public/images/Janeth-Doe-PFP.jpg" alt="Jane" style="width:100%">
+          <img src="/images/members_home/Janeth-Doe-PFP.jpg" alt="Janeth" style="width:100%">
           <div class="home__team__container">
             <h2>Janeth Doe</h2>
             <p class="home__team__title">CEO &amp; Founder</p>
@@ -67,7 +89,7 @@
     
       <div class="home__column">
         <div class="home__card">
-          <img src="/code/public/images/Mikkel-Rossland-PFP.jpg" alt="Mike" style="width:100%">
+          <img src="/images/members_home/Mikkel-Rossland-PFP.jpg" alt="Mikkel" style="width:100%">
           <div class="home__team__container">
             <h2>Mikkel Rossland</h2>
             <p class="home__team__title">Personal Training Manager</p>
@@ -77,7 +99,7 @@
     
       <div class="home__column">
         <div class="home__card">
-          <img src="/code/public/images/Becky-Hubert-PFP.jpg" alt="Becky" style="width:100%">
+          <img src="/images/members_home/Becky-Hubert-PFP.jpg" alt="Becky" style="width:100%">
           <div class="home__team__container">
             <h2>Becky Hubert</h2>
             <p class="home__team__title">Group Fitness Manager</p>
@@ -85,7 +107,6 @@
         </div>
       </div>
     </div> 
-    <script type="text/javascript" src="/code/public/js_scripts/members/member.js"></script>
-    <script type="text/javascript" src="/code/public/js_scripts/members/scripts.js"></script>   
+    <script type="text/javascript" src="/js/navscripts.js"></script>   
 </body>
 </html>

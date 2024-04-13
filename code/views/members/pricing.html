@@ -3,41 +3,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> Memberships-HFC</title>
-<link rel="shortcut icon" href="/code/public/images/shortcut-icon.jpg">
-<link rel="stylesheet" href="/code/public/styles/memberstyles.css">
+<link rel="shortcut icon" href="/images/shortcut-icon.jpg">
+<link rel="stylesheet" href="/styles/memberstyles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
 </head>
 
 <body>
    <!--Used for popup overlay side navigation bar and title bar-->
-  <div id="mySidenav" class="sidenav">
+   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="./home.html">Home</a>
-    <a href="./schedule.html">Schedule</a>
-    <a href="./dashboard.html">Dashboard</a>
-    <a href="./profile.html">Profile</a>
-    <a href="./pricing.html">Pricing Plans</a>
-    <!--<a id="log_out_button" href="#Logout">Log Out</a>-->
-  <a id="log_out_button" onclick="logOut()">Log Out</a>
+    <a href="#Home" onclick="redirectHome()">
+      <span class="material-icons-outlined">home</span>
+      Home
+    </a>
+    <a href="#Schedule" onclick="redirectSchedule()">
+      <span class="material-icons-outlined">event</span>
+      Schedule
+    </a>
+    <a href="#Dashboard" onclick="redirectDashboard()">
+      <span class="material-icons-outlined">analytics</span>
+      Dashboard
+    </a>
+    <a href="#Profile" onclick="redirectProfile()">
+      <span class="material-icons-outlined">account_circle</span>
+      Profile
+    </a>
+    <a href="#Pricing" onclick="redirectPricing()">
+      <span class="material-icons-outlined">payments</span>
+      Pricing Plans
+    </a>
+  <a href="#Logout" onclick="logOut()">
+    <span class="material-icons-outlined">logout</span>
+    Log Out
+  </a>
   </div>
   <div class="title__header">
     <div id="main" class="menu__main">
       <span onclick="openNav()">&#9776; Menu</span>
-      <a href="#default" class="logo">Health&FitnessClub</a>
+      <a href="#default" class="logo">
+        <span class="material-icons-outlined">fitness_center</span>
+        Health&FitnessClub
+      </a>
   </div>
   </div>
   
   <h1 class="home__title">Choose your Membership Plan</h1>
   <div class="hero__image__pricing">
 
+    <!--Shows current membership plan-->
+    <div class="hero__text__pricing">
+      <h3>CURRENT MEMBERSHIP PLAN: </h3>
+      <p style="font-family: Bruno Ace, sans-serif;"><span id="currentMembership"></span></p>
+    </div>
+
     <!--Used to show the different membership plans-->
     <div class="price__columns">
         <ul class="price">
           <li class="header">Basic</li>
           <li class="grey">$ 100 one-time-payment!!</li>
-          <li class="grey"><a class="join__memberbutton" id="Basic" onclick="confirm_paymentPlan(this)"><span>Join Now</span></a></li>
+          <li class="grey"><button class="join__memberbutton" name="membership" value="Basic"><span>Join Now</span></button></li>
           <li>No Commitment Period</li>
             <li>Access to ALL locations</li>
             <li>FREE Wifi**</li>
@@ -51,7 +80,7 @@
         <ul class="price">
             <li class="header" style="background-color:#b42e2e">Deluxe</li>
             <li class="grey">$ 200 one-time-payment!!</li>
-            <li class="grey"><a class="join__memberbutton" id="Deluxe" onclick="confirm_paymentPlan(this)"><span>Join Now</span></a></li>
+            <li class="grey"><button class="join__memberbutton" name="membership" value="Deluxe"><span>Join Now</span></button></li>
             <li>No Commitment Period</li>
             <li>Access to ALL locations</li>
             <li>FREE Wifi**</li>
@@ -65,7 +94,7 @@
         <ul class="price">
             <li class="header">Gym Rat</li>
             <li class="grey">$ 300 one-time-payment!!</li>
-            <li class="grey"><a class="join__memberbutton" id="Gym Rat" onclick="confirm_paymentPlan(this)"><span>Join Now</span></a></li>
+            <li class="grey"><button class="join__memberbutton" name="membership" value="Gym Rat"><span>Join Now</span></button></li>
             <li>No Commitment Period</li>
             <li>Access to ALL locations</li>
             <li>FREE Wifi**</li>
@@ -86,6 +115,6 @@
     </div>
   </div>
 </body>
-    <script type="text/javascript" src="/code/public/js_scripts/members/member.js"></script>
-    <script type="text/javascript" src="/code/public/js_scripts/members/scripts.js"></script>
+    <script type="text/javascript" src="/js/members/pricing.js"></script>
+    <script type="text/javascript" src="/js/navscripts.js"></script>
 </html>

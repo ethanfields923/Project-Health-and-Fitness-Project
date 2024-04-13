@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Hub-HFC</title>
+<link rel="shortcut icon" href="/images/shortcut-icon.jpg">
+<link rel="stylesheet" href="/styles/trainerstyles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+</head>
+
+    <body>
+        <div class="title__header">
+            <a href="#default" class="logo">
+                <span class="material-icons-outlined">fitness_center</span>
+                    Health&FitnessClub
+            </a>
+        </div>
+        
+        <div class="topnav">
+          <a  href="#Home"  id="home" onclick="redirectTrainerHome()">
+              <span class="material-icons-outlined">home</span>
+              Home
+          </a>
+          <a href="#ScheduleManagement" id="schedule" onclick="redirectSecheduleManage()">
+              <span class="material-icons-outlined">schedule</span>
+              Schedule Management
+          </a>
+          <a class="active" href="#MemberSearch" id="search" onclick="redirectSearch()">
+              <span class="material-icons-outlined">person_search</span>
+              Member Search
+          </a>
+          <a href="#Logout" onclick="logOut()">
+            <span class="material-icons-outlined">logout</span>
+            Log Out
+          </a>
+        </div>
+        <div class="search__main">
+            <h1 style="text-align: center;font-family: 'Bruno Ace', sans-serif;">Member Profile SearchHub</h1>
+            <form id="searchHub">
+                <div class="search__bar">
+                    <span class="search-icon material-icons-outlined">search</span>
+                        <input class="search-input" type="text" name="searchBar" id="searchBar" placeholder="Search name...">
+                </div>
+                <h3><span id="searchNumber"></span></h3>
+                <table class="table-sortable hidden" id="search-table">
+                <tr class="bg-info">
+                    <th>View Profile</th>
+                    <th>Member ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Join Date</th>
+                    <th>Membership Type</th>
+                </tr>
+                <tbody id="searchTable"></tbody>  
+                </table>
+            </form>
+        </div>
+        <div class="profilePage hidden" id="profilePopup"></div>
+        <script type="text/javascript" src="/js/trainers/search.js"></script>
+        <script type="text/javascript" src="/js/navscripts.js"></script>  
+</body>
+</html>

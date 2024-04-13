@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipment Maintenance-HFC</title>
+<link rel="shortcut icon" href="/images/shortcut-icon.jpg">
+<link rel="stylesheet" href="/styles/adminstyles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <div class="title__header">
+        <a href="#default" class="logo">
+            <span class="material-icons-outlined">fitness_center</span>
+                Health&FitnessClub
+        </a>
+    </div>
+    
+    <div class="topnav">
+        <a href="#Home"  id="home" onclick="redirectAdminHome()">
+            <span class="material-icons-outlined">home</span>
+            Home
+        </a>
+        <a href="#RoomBooking" id="roomBooking" onclick="redirectBooking()">
+            <span class="material-icons-outlined">room_preferences</span>
+            Room Bookings
+        </a>
+        <a class="active" href="#EquipmentMaintain" id="maintainence" onclick="redirectMaintenance()">
+            <span class="material-icons-outlined">home_repair_service</span>
+            Equipment Maintenance
+        </a>
+        <a href="#ClassUpdate" id="classUpdate" onclick="redirectUpdate()">
+            <span class="material-icons-outlined">update</span>
+            Class Updater
+        </a>
+        <a href="#Billing" id="billProcess" onclick="redirectBilling()">
+            <span class="material-icons-outlined">receipt_long</span>
+            Billing
+        </a>
+        <a href="#Logout" onclick="logOut()">
+          <span class="material-icons-outlined">logout</span>
+          Log Out
+        </a>
+    </div>
+
+    <div id="mine" class="main maintain">
+        <h1>Equipment Maintenance Monitoring</h1>
+        <br><br>
+        <h3>Equipment present at fitness center</h3>
+        <table class="table-sortable" id="maintaintable">
+          <tr class="bg-info">
+            <th>Add Equipment</th>
+            <th>Fix Equipment</th>
+            <th>Delete Equipment</th>
+            <th>Equipment Name</th>
+            <th>Functional</th>
+            <th>Needs maintainence</th>
+            <th>Total Amount</th>
+          </tr>
+        <tbody id="maintainTable">
+          <tr>
+            <td><button type="submit" class="btn addBtn" id="add">
+                <span class="material-icons-outlined">add</span>
+                Add
+              </button>
+            </td>
+            <td><button type="submit" class="btn fixBtn" id="fix">
+                <span class="material-icons-outlined">build</span>
+                Fix
+              </button>
+            </td>
+            <td><button type="submit" class="btn deleteBtn" id="delete">
+                <span class="material-icons-outlined">delete</span>
+                Delete
+              </button>
+            </td>
+            <td>Dumbbells</td>  
+            <td>10</td>
+            <td>5</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td><button type="submit" class="btn addBtn" id="add">
+                <span class="material-icons-outlined">add</span>
+                Add
+              </button>
+            </td>
+            <td><button type="submit" class="btn fixBtn" id="fix">
+                <span class="material-icons-outlined">build</span>
+                Fix
+              </button>
+            </td>
+            <td><button type="submit" class="btn deleteBtn" id="delete">
+                <span class="material-icons-outlined">delete</span>
+                Delete
+              </button>
+            </td>
+            <td>Treadmills</td>  
+            <td>6</td>
+            <td>10</td>
+            <td>16</td>
+          </tr>
+        </tbody>
+        </table>
+        <div id="noEquipmentMsg">There is no equipment to monitor at the fitness center...</div>
+        <button type="submit" class="btn saveBtn">
+            <span class="material-icons-outlined">add</span>
+            Add new Equipment
+          </button>
+        <button type="submit" class="btn saveBtn">
+            <span class="material-icons-outlined">check</span>
+            Save Changes
+        </button>
+        <button type="submit" class="btn btn--cancel">
+            <span class="material-icons-outlined">close</span>
+            Cancel changes
+        </button>
+        </div>
+    <script type="text/javascript" src="/js/admin/maintain.js"></script>
+    <script type="text/javascript" src="/js/navscripts.js"></script>
+</body>
+</html>

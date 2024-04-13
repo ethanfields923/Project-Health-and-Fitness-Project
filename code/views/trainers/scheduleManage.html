@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule Manager-HFC</title>
+<link rel="shortcut icon" href="/images/shortcut-icon.jpg">
+<link rel="stylesheet" href="/styles/trainerstyles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+    <body>
+        <div class="title__header">
+            <a href="#default" class="logo">
+                <span class="material-icons-outlined">fitness_center</span>
+                    Health&FitnessClub
+            </a>
+        </div>
+        
+        <div class="topnav">
+          <a  href="#Home"  id="home" onclick="redirectTrainerHome()">
+              <span class="material-icons-outlined">home</span>
+              Home
+          </a>
+          <a class="active" href="#ScheduleManagement" id="schedule" onclick="redirectSecheduleManage()">
+              <span class="material-icons-outlined">schedule</span>
+              Schedule Management
+          </a>
+          <a href="#MemberSearch" id="search" onclick="redirectSearch()">
+              <span class="material-icons-outlined">person_search</span>
+              Member Search
+          </a>
+          <a href="#Logout" onclick="logOut()">
+            <span class="material-icons-outlined">logout</span>
+            Log Out
+          </a>
+      </div>
+
+        <div id="mine" class="schedule__main">
+            <h1>Schedule Management</h1>
+            <br><br>
+            <h3>Personal Training Sessions Scheduled</h3>
+            <table class="table-sortable hidden" id="schedule-table">
+              <tr class="bg-info">
+                <th>Need to Cancel?</th>
+                <th>Member Name</th>
+                <th>Room Number</th>
+                <th>Day</th>
+                <th>Time Start</th>
+                <th>Duration(in minutes)</th>
+                <th>Purpose</th>
+              </tr>
+            <tbody id="scheduleTable"></tbody>
+            </table>
+            <div id="noSessionMsg">You have no personal training sessions scheduled...</div>
+            <br><br>
+            <div id="available" class="avail__main"> 
+              <h3>Days Available</h3>
+                <label class="day__label">Monday</label>
+                <div class="time__input">
+                  <input type="text" id="timeStart1" placeholder="Time-start...">
+                  <input type="text" id="timeEnd1" placeholder="Time-end...">
+                  <button type="submit" class="scheduleBtn saveBtn" name="updateDay" value="Monday">
+                    <span class="material-icons-outlined">check</span>
+                    Update 
+                  </button>
+                </div>
+                <br>
+
+                <label class="day__label">Tuesday</label>
+                <div class="time__input">
+                  <input type="text" id="timeStart2" placeholder="Time-start...">
+                  <input type="text" id="timeEnd2" placeholder="Time-end...">
+                  <button type="submit" class="scheduleBtn saveBtn" name="updateDay" value="Tuesday">
+                    <span class="material-icons-outlined">check</span>
+                    Update 
+                  </button>
+                </div>
+                <br>
+
+                <label class="day__label">Wednesday</label>
+                <div class="time__input">
+                  <input type="text" id="timeStart3" placeholder="Time-start...">
+                  <input type="text" id="timeEnd3" placeholder="Time-end...">
+                  <button type="submit" class="scheduleBtn saveBtn" name="updateDay" value="Wednesday">
+                    <span class="material-icons-outlined">check</span>
+                    Update 
+                  </button>
+                </div>
+                <br>
+
+                <label class="day__label">Thursday</label>
+                <div class="time__input">
+                  <input type="text" id="timeStart4" placeholder="Time-start...">
+                  <input type="text" id="timeEnd4" placeholder="Time-end...">
+                  <button type="submit" class="scheduleBtn saveBtn" name="updateDay" value="Thursday">
+                    <span class="material-icons-outlined">check</span>
+                    Update
+                  </button>
+                </div>
+                <br>
+
+                <label class="day__label">Friday</label>
+                <div class="time__input">
+                  <input type="text" id="timeStart5" placeholder="Time-start...">
+                  <input type="text" id="timeEnd5" placeholder="Time-end...">
+                  <button type="submit" class="scheduleBtn saveBtn" name="updateDay" value="Friday">
+                    <span class="material-icons-outlined">check</span>
+                    Update
+                  </button>
+                </div>
+                <br>
+
+                <label class="day__label">Saturday</label>
+                <div class="time__input">
+                  <input type="text" id="timeStart6" placeholder="Time-start...">
+                  <input type="text" id="timeEnd6" placeholder="Time-end...">
+                  <button type="submit" class="scheduleBtn saveBtn" name="updateDay" value="Saturday">
+                    <span class="material-icons-outlined">check</span>
+                    Update
+                  </button>
+                </div>
+                <br>
+
+                <label class="day__label">Sunday</label>
+                <div class="time__input">
+                  <input type="text" id="timeStart7" placeholder="Time-start...">
+                  <input type="text" id="timeEnd7" placeholder="Time-end...">
+                  <button type="submit" class="scheduleBtn saveBtn" name="updateDay" value="Sunday">
+                    <span class="material-icons-outlined">check</span>
+                    Update
+                  </button>
+                </div>
+            </div>
+            </div>
+          <script type="text/javascript" src="/js/trainers/manage.js"></script>
+          <script type="text/javascript" src="/js/navscripts.js"></script>  
+    </body>
+</html>

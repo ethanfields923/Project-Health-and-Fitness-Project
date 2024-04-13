@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home-HFC</title>
+<title>Room Booking Management-HFC</title>
 <link rel="shortcut icon" href="/images/shortcut-icon.jpg">
 <link rel="stylesheet" href="/styles/adminstyles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,11 +23,11 @@
     </div>
     
     <div class="topnav">
-        <a class="active" href="#Home"  id="home" onclick="redirectAdminHome()">
+        <a href="#Home"  id="home" onclick="redirectAdminHome()">
             <span class="material-icons-outlined">home</span>
             Home
         </a>
-        <a href="#RoomBooking" id="roomBooking" onclick="redirectBooking()">
+        <a class="active" href="#RoomBooking" id="roomBooking" onclick="redirectBooking()">
             <span class="material-icons-outlined">room_preferences</span>
             Room Bookings
         </a>
@@ -49,15 +49,50 @@
         </a>
     </div>
 
-    <div class="home__main">
-        <div class="hero__image__home">
-            <div class="hero__image__home-text">
-                <h1 style="font-family: 'Bruno Ace', san-serif;">Admin Page</h1>
-                <p>Good day! What can we do for you today?</p>
-            </div>
-        </div>
+    <div id="mine" class="main book">
+        <h1>Room Booking Management</h1>
+        <br><br>
+        <h3>Rooms currently booked</h3>
+        <table class="table-sortable" id="bookingtable">
+          <tr class="bg-info">
+            <th>Edit Booking</th>
+            <th>Room Number</th>
+            <th>Booking Date</th>
+            <th>Booking Time</th>
+            <th>Room Use</th>
+          </tr>
+        <tbody id="bookingTable">
+          <tr>
+            <td><button type="submit" class="btn editBtn" id="edit">
+                <span class="material-icons-outlined">edit</span>
+                Edit Table
+              </button>
+            </td>
+            <td>1</td>  
+            <td>2023-09-01</td>
+            <td>09:00 am</td>
+            <td>Consultation</td>
+          </tr>
+          <tr>
+            <td><button type="submit" class="btn editBtn" id="edit">
+                <span class="material-icons-outlined">edit</span>
+                Edit Table
+              </button>
+            </td>
+            <td>2</td>  
+            <td>2023-09-01</td>
+            <td>10:00 pm</td>
+            <td>Group Class</td>
+          </tr>
+        </tbody>
+        </table>
+        <div id="noSessionMsg">You have no booking sessions coming up...</div>
+        <button type="submit" class="btn saveBtn">
+            <span class="material-icons-outlined">add</span>
+              Add new Booking
+            </button>
     </div>
-    
-    <script type="text/javascript" src="/js/navscripts.js"></script>  
+    <script type="text/javascript" src="/js/admin/book.js"></script>
+    <script type="text/javascript" src="/js/navscripts.js"></script>
 </body>
 </html>

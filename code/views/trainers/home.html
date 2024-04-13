@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home-HFC</title>
+<link rel="shortcut icon" href="/images/shortcut-icon.jpg">
+<link rel="stylesheet" href="/styles/trainerstyles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+</head>
+
+    <body>
+        <div class="title__header">
+            <a href="#default" class="logo">
+                <span class="material-icons-outlined">fitness_center</span>
+                    Health&FitnessClub
+            </a>
+        </div>
+        
+        <div class="topnav">
+            <a class="active" href="#Home"  id="home" onclick="redirectTrainerHome()">
+                <span class="material-icons-outlined">home</span>
+                Home
+            </a>
+            <a href="#ScheduleManagement" id="schedule" onclick="redirectSecheduleManage()">
+                <span class="material-icons-outlined">schedule</span>
+                Schedule Management
+            </a>
+            <a href="#MemberSearch" id="search" onclick="redirectSearch()">
+                <span class="material-icons-outlined">person_search</span>
+                Member Search
+            </a>
+            <a href="#Logout" onclick="logOut()">
+              <span class="material-icons-outlined">logout</span>
+              Log Out
+            </a>
+        </div>
+
+        <div class="home__main">
+            <div class="hero__image__home">
+                <div class="hero__image__home-text">
+                    <h1 style="font-family: 'Bruno Ace', san-serif;">Trainer Page</h1>
+                    <p>Good day! What can we do for you today?</p>
+                    <button id="home_scheduleButton" onclick="redirectSchedule()"><span>Manage your Schedule</span></button><br>
+                    <button id="home_searchButton" onclick="redirectSearch()"><span>Search for Members</span></button>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/js/navscripts.js"></script>  
+    </body>
+</html>

@@ -3,10 +3,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Schedule-HFC</title>
-<link rel="shortcut icon" href="/code/public/images/shortcut-icon.jpg">
-<link rel="stylesheet" href="/code/public/styles/memberstyles.css">
+<link rel="shortcut icon" href="/images/shortcut-icon.jpg">
+<link rel="stylesheet" href="/styles/memberstyles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -15,62 +18,82 @@
    <!--Used for popup overlay side navigation bar and title bar-->
    <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="./home.html">Home</a>
-    <a href="./schedule.html">Schedule</a>
-    <a href="./dashboard.html">Dashboard</a>
-    <a href="./profile.html">Profile</a>
-    <a href="./pricing.html">Pricing Plans</a>
-    <!--<a id="log_out_button" href="#Logout">Log Out</a>-->
-  <a id="log_out_button" onclick="logOut()">Log Out</a>
+    <a href="#Home" onclick="redirectHome()">
+      <span class="material-icons-outlined">home</span>
+      Home
+    </a>
+    <a href="#Schedule" onclick="redirectSchedule()">
+      <span class="material-icons-outlined">event</span>
+      Schedule
+    </a>
+    <a href="#Dashboard" onclick="redirectDashboard()">
+      <span class="material-icons-outlined">analytics</span>
+      Dashboard
+    </a>
+    <a href="#Profile" onclick="redirectProfile()">
+      <span class="material-icons-outlined">account_circle</span>
+      Profile
+    </a>
+    <a href="#Pricing" onclick="redirectPricing()">
+      <span class="material-icons-outlined">payments</span>
+      Pricing Plans
+    </a>
+  <a href="#Logout" onclick="logOut()">
+    <span class="material-icons-outlined">logout</span>
+    Log Out
+  </a>
   </div>
   <div class="title__header">
     <div id="main" class="menu__main">
       <span onclick="openNav()">&#9776; Menu</span>
-      <a href="#default" class="logo">Health&FitnessClub</a>
-    </div>
+      <a href="#default" class="logo">
+        <span class="material-icons-outlined">fitness_center</span>
+        Health&FitnessClub
+      </a>
+  </div>
   </div>
 
 <!--Holds tabs to seperate out schedule pages  rgb(65, 65, 189)-->  
 <div class="schedule__tab">
-    <button class="schedule__tablinks" onclick="openTab('group', this, 'rgb(65, 65, 189)')">Group Fitness</button>
-    <button class="schedule__tablinks" onclick="openTab('personal', this, 'rgb(202, 92, 77)')">Personal Training</button>
-    <button class="schedule__tablinks" onclick="openTab('mine', this, 'rgb(63, 172, 63)')" id="schedule_defaultOpen">My Schedule</button>
+    <button class="schedule__tablinks" onclick="openScheduleTab('group', this, 'rgb(65, 65, 189)')" >Group Fitness</button>
+    <button class="schedule__tablinks" onclick="openScheduleTab('personal', this, 'rgb(202, 92, 77)')">Personal Training</button>
+    <button class="schedule__tablinks" onclick="openScheduleTab('mine', this, 'rgb(63, 172, 63)')" id="schedule_defaultOpen">My Schedule</button>
   </div>
   
   <!--Holds the different group fitness classes in a table which can be sorted-->
   <div id="group" class="schedule__tabcontent">
     <h1>Group Fitness Classes</h1>
-        <table class="table-sortable" id="group-table">
+        <table class="table-sortable hidden" id="group-table">
             <tr class="bg-info">
               <th>Come register!</th>
               <th>Name</th>
               <th>Room Number</th>
-              <th>Date</th>
+              <th>Day</th>
               <th>Time Start</th>
               <th>Duration</th>
               <th>Instructor</th>
             </tr>
         <tbody id="groupTable"></tbody>
         </table>
+        <div id="noGroupsMsg">There are no group classes at the moment...</div>
       </div>
   
   <!--Holds the different personal trainers in a table which can be sorted-->
   <div id="personal" class="schedule__tabcontent">
     <h1>Personal Training Sessions</h1>
-    <table class="table-sortable" id="personal-table">
+    <table class="table-sortable hidden" id="personal-table">
       <tr class="bg-info">
         <th>Book Now!</th>
-        <th>Availability</th>
         <th>Name</th>
         <th>Age</th>
+        <th>Email</th>
         <th>Gender</th>
-        <th>Certifications</th>
         <th>Specializations</th>
         <th>Favourite Exercise</th>
       </tr>
-
     <tbody id="personalTable"></tbody>
   </table>
+  <div id="noTrainersMsg">There are no Trainers in the system at the moment...</div>
   </div>
   
   <!--Holds table to show the schedule of the person in question and allows the user to reschedule or cancel their personal trainer sessions-->
@@ -78,13 +101,13 @@
     <h1>My Schedule</h1>
     <br><br>
     <h3>Personal Training Sessions</h3>
-    <table class="table-sortable" id="mine1-table">
+    <table class="table-sortable hidden" id="mine1-table">
       <tr class="bg-info">
         <th>Need to Reschedule?</th>
         <th>Need to Cancel?</th>
         <th>Trainer Name</th>
         <th>Room Number</th>
-        <th>Date</th>
+        <th>Day</th>
         <th>Time Start</th>
         <th>Duration</th>
         <th>Purpose</th>
@@ -93,13 +116,14 @@
     </table>
     <div id="noSessionMsg">You have no personal training sessions coming up...</div>
     <br><br>
+
     <h3>Group Fitness Classes</h3>
-    <table class="table-sortable" id="mine2-table">
+    <table class="table-sortable hidden" id="mine2-table">
       <tr class="bg-info">
         <th>Need to deregister?</th>
         <th>Class Name</th>
         <th>Room Number</th>
-        <th>Date</th>
+        <th>Day</th>
         <th>Time Start</th>
         <th>Duration</th>
         <th>Instructor</th>
@@ -108,8 +132,8 @@
     </table>
     <div id="noClassMsg">You have not signed up for any classes...</div>
   </div>
+
 </body>
-    <script type="text/javascript" src="/code/public/js_scripts/trainers/trainer.js"></script>
-    <script type="text/javascript" src="/code/public/js_scripts/members/member.js"></script>
-    <script type="text/javascript" src="/code/public/js_scripts/members/scripts.js"></script>
+    <script type="text/javascript" src="/js/members/schedule.js"></script>
+    <script type="text/javascript" src="/js/navscripts.js"></script>
 </html>

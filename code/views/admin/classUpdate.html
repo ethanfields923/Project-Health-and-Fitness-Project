@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Billing Processor-HFC</title>
+<title>Class Update-HFC</title>
 <link rel="shortcut icon" href="/images/shortcut-icon.jpg">
 <link rel="stylesheet" href="/styles/adminstyles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,11 +35,11 @@
             <span class="material-icons-outlined">home_repair_service</span>
             Equipment Maintenance
         </a>
-        <a href="#ClassUpdate" id="classUpdate" onclick="redirectUpdate()">
+        <a class="active" href="#ClassUpdate" id="classUpdate" onclick="redirectUpdate()">
             <span class="material-icons-outlined">update</span>
             Class Updater
         </a>
-        <a class="active" href="#Billing" id="billProcess" onclick="redirectBilling()">
+        <a href="#Billing" id="billProcess" onclick="redirectBilling()">
             <span class="material-icons-outlined">receipt_long</span>
             Billing
         </a>
@@ -49,69 +49,56 @@
         </a>
     </div>
 
-    <div id="mine" class="main bill">
-        <h1>Billing and Payment Processing</h1>
+    <div id="mine" class="main update">
+        <h1>Class Schedule Updater</h1>
         <br><br>
-        <h3>Current Bills which must be reviewed</h3>
-        <table class="table-sortable" id="billingtable">
+        <h3>Classes that are presently scheduled</h3>
+        <table class="table-sortable" id="classUpdatetable">
           <tr class="bg-info">
-            <th>Accept Payment</th>
-            <th>Decline Payment</th>
-            <th>Amount being paid</th>
-            <th>Credit Card Number</th>
-            <th>Name on Card</th>
-            <th>Exp. Month</th>
-            <th>Exp. Year</th>
-            <th>CVV</th>
-            <th>Purpose of payment</th>
-            <th>Payee</th>
+            <th>Edit Table</th>
+            <th>Class Name</th>
+            <th>Room Number Held in</th>
+            <th>Date</th>
+            <th>Time Start</th>
+            <th>Duration</th>
+            <th>Instructor</th>
           </tr>
-        <tbody id="billingTable">
+        <tbody id="classUpdateTable">
           <tr>
-            <td><button type="submit" class="btn acceptBtn" id="acceptPayment">
-                <span class="material-icons-outlined">recommend</span>
-                Accept
+            <td><button type="submit" class="btn editBtn" id="add">
+                <span class="material-icons-outlined">edit</span>
+                Edit
               </button>
             </td>
-            <td><button type="submit" class="btn declineBtn" id="declinePayment">
-                <span class="material-icons-outlined">cancel</span>
-                Decline
-                </button>
-            </td>
-            <td>$50</td>
-            <td>5555-5555-5555</td>  
-            <td>John Doe</td>
-            <td>08</td>
-            <td>2027</td>
-            <td>234</td>
-            <td>Personal Training</td>
-            <td>John Doe</td>
+            <td>Hot Yoga</td>  
+            <td>10</td>
+            <td>2024-08-07</td>
+            <td>2:00 pm</td>
+            <td>2 hours</td>
+            <td>Mikkel Rossland</td>
           </tr>
           <tr>
-            <td><button type="submit" class="btn acceptBtn" id="acceptPayment">
-                <span class="material-icons-outlined">recommend</span>
-                Accept
+            <td><button type="submit" class="btn editBtn" id="add">
+                <span class="material-icons-outlined">edit</span>
+                Edit
               </button>
             </td>
-            <td><button type="submit" class="btn declineBtn" id="declinePayment">
-                <span class="material-icons-outlined">cancel</span>
-                Decline
-                </button>
-            </td>
-            <td>$200</td>
-            <td>4444-4444-4444</td>  
-            <td>Mary Ann</td>
-            <td>06</td>
-            <td>2029</td>
-            <td>435</td>
-            <td>Deluxe Membership</td>
-            <td>Becky Hubert</td>
+            <td>Cario Bikes</td>  
+            <td>1</td>
+            <td>2024-08-10</td>
+            <td>9:00 am</td>
+            <td>1 hour</td>
+            <td>Joseph Rossland</td>
           </tr>
         </tbody>
         </table>
-        <div id="noBillsMsg">There are no more bills to be reviewed...</div>
+        <div id="noClassesMsg">There is no group classes scheduled...</div>
+        <button type="submit" class="btn saveBtn">
+          <span class="material-icons-outlined">add</span>
+            Add new Class
+          </button>
         </div>
-    <script type="text/javascript" src="/js/admin/billing.js"></script>
+    <script type="text/javascript" src="/js/admin/update.js"></script>
     <script type="text/javascript" src="/js/navscripts.js"></script>
 </body>
 </html>
