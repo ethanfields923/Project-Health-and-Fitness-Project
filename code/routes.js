@@ -147,7 +147,7 @@ router.post('/scheduleinfo', async(request, response) => {
         let myGroupResult = [];
         for(let i=0; i < groupSessions.length; i++){
             const rowResult = {};
-            rowResult.id = groupSessions[i].schedule_id;
+            rowResult.id = i+1;
             
            //Get room number, day, time start, and duration based on the room id
            const classInfoQuery = await request.app.locals.client.query(`SELECT * FROM groupClasses WHERE class_id=${groupSessions[i].session_id}`);
@@ -199,6 +199,36 @@ router.post('/scheduleinfo', async(request, response) => {
         response.status(200).json({success: true, personalResult, myGroupResult, groupResult, trainersResult});
     } catch(err){
         console.error('Error fetching schedule information: ', err);
+        response.status(500).json({success: false, message: 'Internal Server Error...'});
+    }
+});
+
+//Registers member to group class 
+router.post('/registerclass', async(request, response) => {
+    const { userID, value } = request.body;
+
+    try{        
+        const checkClassQuery =  await request.app.locals.client.query(`SELECT * FROM member_group_schedules WHERE member_id=${userID} AND session_id=${value}`);
+
+        if(checkClassQuery.rows.length > 0){
+            return response.status(401).json({success: false, message: "You have already registered for this class. Please try again at another time..."});
+        }
+        const getBillingIdQuery = await request.app.locals.client.query(`SELECT billing_id FROM billingInfo WHERE member_id=${userID};`);
+        if(getBillingIdQuery.rows.length > 0){
+            const billingId = getBillingIdQuery.rows[0].billing_id;
+            
+            const addPaymentQuery = await request.app.locals.client.query(`INSERT INTO clubPayments (billing_id, amount, payment_type) VALUES (${billingId}, 50, 'Group Class')`);
+            const registerClassQuery = await request.app.locals.client.query(`INSERT INTO member_group_schedules(member_id, session_id) VALUES (${userID}, ${value});`);
+            const updateCapacityQuery = await request.app.locals.client.query(`
+            UPDATE groupClasses
+            SET current_capacity = current_capacity + 1
+            WHERE class_id=${value};`);
+            response.status(200).json({success: false, message: 'Registration Successful...'});
+        }else{
+            return response.status(401).json({success: false, message: "You are missing billing information. Please update your payment information in the profile page..."});
+        }
+    } catch(err){
+        console.error('Error registering to class: ', err);
         response.status(500).json({success: false, message: 'Internal Server Error...'});
     }
 });
@@ -278,7 +308,7 @@ router.post('/showExercises', async(request, response) => {
         const exercisesQuery = await request.app.locals.client.query(`
         SELECT e.*, er.routine_day, er.exercise_sets, er.exercise_reps
         FROM exercises e
-        JOIN exercises_routines er ON e.exercise_id = er.exercise_id
+        JOIN exercise_routines er ON e.exercise_id = er.exercise_id
         WHERE er.routine_id = ${routine};`);
 
         const routinesQuery = await request.app.locals.client.query(`SELECT workout_amount FROM routines WHERE routine_id=${routine}`);

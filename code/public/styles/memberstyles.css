@@ -550,6 +550,9 @@ button[name="routineChange"]:hover{
   background-color: green;
 }
 
+.hidden{
+  display: none;
+}
 /*End of Dashboard page styles*/
 
 /*Profile page styles*/

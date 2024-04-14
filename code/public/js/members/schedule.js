@@ -14,7 +14,6 @@ async function schedule_init(){
         const data= await response.json();
 
         if(data.success){
-            console.log('Hello')
             updateTable('mine1', data.personalResult);
             updateTable('mine2', data.myGroupResult);
             updateTable('group', data.groupResult);
@@ -30,7 +29,28 @@ async function schedule_init(){
 
 //Allows the member to register for the available group fitness classes
 async function class_register(value, event){
-
+    try{
+        event.preventDefault();
+        const userID = sessionStorage.getItem('ID');
+        if(confirm("Registration is 50$. Are you sure to wish to pay?") == true){
+            const response = await fetch('/registerclass', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ userID, value })
+            });
+            const data= await response.json();
+            
+            alert(data.message);
+            if(data.success){
+                schedule_init();
+            }
+        }
+    } catch(err){
+        console.error('Error initializing schedule page: ', err);
+        alert('An error occured while initializing schedule page. Please try again later...');
+    }
 
 }
 
@@ -80,7 +100,7 @@ function updateTable(tabName, classArray){
             for(let i=0; i< array1.length; i++){
                 let spots = +array1[i].max - +array1[i].current;
                 let row = `<tr>
-                           <td><button class="scheduleBtn" onclick="class_register(${array1.id}, event)">Register</button><br>${spots} spots left</br></td>
+                           <td><button class="scheduleBtn" onclick="class_register(${array1[i].id}, event)">Register</button><br>${spots} spots left</br></td>
                            <td>${array1[i].className}</td>
                            <td>${array1[i].roomNumber}</td>
                            <td>${array1[i].day}</td>
@@ -107,7 +127,7 @@ function updateTable(tabName, classArray){
         
             for(let i=0; i< array2.length; i++){
                 let row = `<tr>
-                           <td><button class="scheduleBtn" onclick="training_book(${array2.id}, event)">Book</button></td>
+                           <td><button class="scheduleBtn" onclick="training_book(${array2[i].id}, event)">Book</button></td>
                            <td>${array2[i].full_name}</td>
                            <td>${array2[i].age}</td>
                            <td>${array2[i].email}</td>
@@ -135,8 +155,8 @@ function updateTable(tabName, classArray){
             
             for(let i=0; i< array3.length; i++){   
                 let row = `<tr>
-                           <td><button class="scheduleBtn" onclick="training_reschedule(${array3.id}, event)">Reschedule</button></td>
-                           <td><button class="scheduleBtn btn--cancel" onclick="training_cancel(${array3.id}, event)">Cancel</button></td>
+                           <td><button class="scheduleBtn" onclick="training_reschedule(${array3[i].id}, event)">Reschedule</button></td>
+                           <td><button class="scheduleBtn btn--cancel" onclick="training_cancel(${array3[i].id}, event)">Cancel</button></td>
                            <td>${array3[i].trainerName}</td>
                            <td>${array3[i].roomNumber}</td>
                            <td>${array3[i].day}</td>
@@ -147,7 +167,7 @@ function updateTable(tabName, classArray){
                     table3.innerHTML += row;
                 
             }
-
+            
             //Check if there are rows in the tables or not; else, display a message stating so
             if(table3.rows.length < 1){
                 document.getElementById('noSessionMsg').style.display = "block";
@@ -162,27 +182,28 @@ function updateTable(tabName, classArray){
             document.getElementById("mine2-table").style.display = "table";
             let array4 = classArray;    
             let table4 = document.getElementById('mine2Table');
-            console.log(array4.length);
             for(let i=0; i< array4.length; i++){
                 let row = `<tr>
-                           <td><button class="scheduleBtn" onclick="class_deregister(${array4.id}, event)">Deregister</button></td>
+                           <td><button class="scheduleBtn" onclick="class_deregister(${array4[i].id}, event)">Deregister</button></td>
                            <td>${array4[i].className}</td>
                            <td>${array4[i].roomNumber}</td>
                            <td>${array4[i].day}</td>
                            <td>${array4[i].timeStart}</td>
                            <td>${array4[i].duration}</td>
                            <td>${array4[i].instructor}</td>
-                           </tr>`
+                           </tr>`;
                 table4.innerHTML += row;
             }
-
-            if(table4.rows.length < 1){
-                document.getElementById('noClassMsg').style.display = "block";
-                document.getElementById("mine2-table").style.display = "none";
-            }else{
-                document.getElementById('noClassMsg').style.display = "none";  
-            }
-
+            
+            setTimeout(function() {
+                if(table4.rows.length < 1){
+                    document.getElementById('noClassMsg').style.display = "block";
+                    document.getElementById("mine2-table").style.display = "none";
+                }else{
+                    document.getElementById('noClassMsg').style.display = "none";  
+                }
+            }, 0);
+            
             break;
 
         default: 

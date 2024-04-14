@@ -1,5 +1,5 @@
 --DDL SQL File
-CREATE DATABASE ProjectV2;
+--CREATE DATABASE ProjectV2;
 
 CREATE TABLE members(
     id SERIAL PRIMARY KEY,
@@ -43,8 +43,8 @@ CREATE TABLE exercise_routines (
     routine_id INTEGER REFERENCES routines(routine_id),
     exercise_id INTEGER REFERENCES exercises(exercise_id), 
     routine_day INTEGER,
-    exercise_sets INTEGER,
-    exercise_reps INTEGER,
+    exercise_sets INTEGER DEFAULT 0,
+    exercise_reps INTEGER DEFAULT 0,
 	PRIMARY KEY(routine_id, exercise_id, routine_day)
 );
 
@@ -76,7 +76,7 @@ CREATE TABLE trainers(
     full_name VARCHAR(100) NOT NULL,  
     email VARCHAR(100) UNIQUE NOT NULL,
     age INTEGER DEFAULT 0,
-    gender VARCHAR(10) DEFAULT '',
+    gender VARCHAR(20) DEFAULT '',
     favourite_exercise VARCHAR(255) DEFAULT 'None',
     specializations VARCHAR(255) DEFAULT ''
 );

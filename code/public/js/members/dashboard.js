@@ -51,16 +51,18 @@ function updateWeight(current, goal){
 function update_currentWeekStreak(current, goal){
     document.getElementById('weekGoal').innerHTML = current + '/' + goal + ' days done. ';
 
-    if(current == goal){
-        document.getElementById('weekGoal').innerHTML += "Congrats!";
+    if(current == 0 && goal > 0){
+        document.getElementById('weekGoal').innerHTML += "Let's get started!";
+    } else if(current == 0 && goal == 0) {
+        document.getElementById('weekGoal').innerHTML += "Update your weekly goal on the profile page";
     } else if(current < goal) {
         document.getElementById('weekGoal').innerHTML += "Keep it up!";
-    } else if(current == 0) {
-        document.getElementById('weekGoal').innerHTML += "Let's get started!";
+    } else if(current == goal){
+        document.getElementById('weekGoal').innerHTML += "Congrats!";
     } else{
         document.getElementById('weekGoal').innerHTML += "Something went wrong...";
     }
-}
+}   
 
 function update_trophiesEarned(number){
 
@@ -75,8 +77,9 @@ function update_trophiesEarned(number){
 
 function update_hotStreak(streak){
     document.getElementById('currentStreak').innerHTML = streak + ' days in a row! ';
-
-    if(streak < 5){
+    if(streak == 0){
+        document.getElementById('currentStreak').innerHTML += "Let's get started on your streak"; 
+    } else if(streak > 1 && streak < 5){
         document.getElementById('currentStreak').innerHTML += 'Onto a good start!'; 
     } else{
         document.getElementById('currentStreak').innerHTML += "You're on fire!";

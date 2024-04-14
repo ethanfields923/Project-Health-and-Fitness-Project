@@ -254,7 +254,7 @@ VALUES (101, 'Thursday', '10:00:00', 60, true, 'Personal Training');
 INSERT INTO room_bookings (room_number,  day_of_week, time_start, duration_minutes, is_booked, room_use_type)
 VALUES (102, 'Wednesday','18:00:00', 60, true, 'Group Class');
 
-INSERT INTO room_bookings(room_number)
+INSERT INTO room_bookings(room_number,  day_of_week, time_start, duration_minutes, is_booked, room_use_type)
 VALUES (103, 'Monday', '12:00:00', 30, true, 'Personal Training');
 
 INSERT INTO room_bookings (room_number,  day_of_week, time_start, duration_minutes, is_booked, room_use_type)
@@ -277,8 +277,8 @@ INSERT INTO personal_training_sessions (trainer_id, member_id, room_id, session_
 VALUES (1, 2, 3, 'Consultation');
 
 -- Inserting group classes
-INSERT INTO groupClasses (room_id, classname, max_capacity, instructor)
-VALUES (2, 'Hot Yoga', 20, 'Anthony');
+INSERT INTO groupClasses (room_id, classname, current_capacity, max_capacity, instructor)
+VALUES (2, 'Hot Yoga', 1, 20, 'Anthony');
 
 INSERT INTO groupClasses (room_id, classname, instructor)
 VALUES (4, 'Cardio Cycles', 'Becky');
