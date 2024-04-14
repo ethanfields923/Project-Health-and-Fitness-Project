@@ -26,4 +26,4 @@ Directions for running and testing:
    c. Watch the video to see what you can test. 
 
 
-Video Link:
+Video Link: https://mediaspace.carleton.ca/media/Project+V2+Demonstration+Video/1_3xz6z4gz
