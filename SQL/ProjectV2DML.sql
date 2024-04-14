@@ -78,138 +78,138 @@ VALUES ('CARDIO BUNNY', 2);
 --Inserting exercises into the routines (many-to-many relationship)
 --For the BIG LIFTS routine
 --Day 1
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (1, 1, 1, 5, 5);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (1, 2, 1, 5, 5);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (1, 3, 1, 5, 5);
 
 --Day 2
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (1, 1, 2, 5, 5);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (1, 4, 2, 5, 5);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (1, 5, 2, 1, 5);
 
 --For the FAT LOSS routine
 --Day 1
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 6, 1, 1, 5);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 2, 1, 3, 10);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 8, 1, 3, 20);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 13, 1, 3, 12);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 10, 1, 3, 60);
 
 --Day 2
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 7, 2, 1, 5);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 3, 2, 3, 10);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 9, 2, 3, 20);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 11, 2, 3, 12);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 10, 2, 3, 60);
 
 --Day 3
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 16, 3, 1, 5);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 1, 3, 3, 10);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 5, 3, 3, 20);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 15, 3, 3, 12);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (2, 10, 3, 3, 60);
 
 --For the MUSCLE BUILDER routine
 --Day 1
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 2, 1, 3, 8);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 4, 1, 3, 10);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 14, 1, 3, 8);
 
 --Day 2
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 3, 2, 3, 8);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 11, 2, 3, 10);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 10, 2, 3, 60);
 
 --Day 3
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 1, 3, 3, 8);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 5, 3, 3, 8);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 6, 3, 1, 5);
 
 --Day 4
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 8, 4, 3, 20);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 13, 4, 3, 12);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 15, 4, 3, 15);
 
 --Day 5
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 8, 5, 3, 20);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 12, 5, 3, 12);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (3, 17, 5, 3, 20);
 
 --For the CARDIO BUNNY routine
 --Day 1
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (4, 6, 1, 1, 15);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (4, 7, 1, 1, 15);
 
 --Day 2
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (4, 16, 2, 1, 15);
 
-INSERT INTO exercises_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
+INSERT INTO exercise_routines (routine_id, exercise_id, routine_day, exercise_sets, exercise_reps)
 VALUES (4, 7, 2, 1, 15);
 
 -- Inserting dashboard
@@ -231,7 +231,7 @@ INSERT INTO trainers (username, passcode, full_name, email, age, gender, favouri
 VALUES ('Viking', 'vick345', 'Viktor Lance', 'trainerviktor@example.com', 61, 'Male', 'Bench Press', 'Bodybuilding, Weight Loss');
 
 INSERT INTO trainers (username, passcode, full_name, email, age, gender, favourite_exercise, specializations)
-VALUES ('AshLee', 'ash345', 'Ashley Greyham', 'trainerashley@example.com', 24, 'Female', 'Deadlifts', 'Weightlifting, Strength Training');
+VALUES ('AshLee', 'ash345', 'Ashley Greyham', 'trainerashley@example.com', 24, 'Prefer not to say', 'Deadlifts', 'Weightlifting, Strength Training');
 
 -- Inserting admin
 INSERT INTO admin (username, passcode)

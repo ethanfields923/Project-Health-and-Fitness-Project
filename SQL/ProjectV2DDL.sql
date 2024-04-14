@@ -14,7 +14,7 @@ CREATE TABLE members(
 );
 
 CREATE TABLE healthMetrics(
-    healthMetric_id SERIAL PRIMARY KEY,
+    healthmetric_id SERIAL PRIMARY KEY,
     member_id INTEGER REFERENCES members(id),
     member_currweight DECIMAL(10,1) DEFAULT 0.0,
     member_goalweight DECIMAL(10,1) DEFAULT 0.0,
@@ -39,7 +39,7 @@ CREATE TABLE routines (
     workout_amount INTEGER
 );
 
-CREATE TABLE exercises_routines (
+CREATE TABLE exercise_routines (
     routine_id INTEGER REFERENCES routines(routine_id),
     exercise_id INTEGER REFERENCES exercises(exercise_id), 
     routine_day INTEGER,
@@ -122,10 +122,10 @@ CREATE TABLE groupClasses(
     instructor VARCHAR(100) DEFAULT 'N/A'       --Seperate from trainers 
 );
 
-CREATE TABLE member_group_schedules(
-    schedule_id SERIAL PRIMARY KEY, 
+CREATE TABLE member_group_schedules( 
     member_id INTEGER REFERENCES members(id), 
-    session_id INTEGER REFERENCES groupClasses(class_id)  
+    session_id INTEGER REFERENCES groupClasses(class_id),
+    PRIMARY KEY(member_id, session_id)
 );
 
 CREATE TABLE clubEquipment(
